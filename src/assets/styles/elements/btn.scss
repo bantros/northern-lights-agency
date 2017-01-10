@@ -1,0 +1,9 @@
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  transition: color 300ms ease-in-out, border-color 300ms ease-in-out;
+}

@@ -1,0 +1,74 @@
+.t-ff-sans-serif {
+  font-family: $ff-sans-serif;
+}
+
+.t-fw-400 {
+  font-weight: 400;
+}
+
+.t-fw-700 {
+  font-weight: 700;
+}
+
+.t-ta-center {
+  text-align: center;
+}
+
+.t-tt-upper {
+  text-transform: uppercase;
+}
+
+.t-indent {
+  padding-left: 1rem;
+}
+
+.t-heading-1 {
+  font-size: 1em;
+  line-height: 1.25;
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .t-heading-1 {
+    font-size: 1.25em;
+  }
+
+}
+
+.t-body {
+  font-size: 1em;
+}
+
+.t-lead {
+  position: relative;
+  font-size: 1.125em;
+  // padding-top: 1em;
+  padding-bottom: 1.5em;
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .t-lead {
+    font-size: 1.5em;
+  }
+
+}
+
+.t-lead::before,
+.t-lead::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 2ch;
+  height: 1px;
+}
+
+.t-lead::before {
+  // top: 0;
+  // border-top: 1px solid;
+}
+
+.t-lead::after {
+  bottom: 0;
+  border-bottom: 1px solid;
+}

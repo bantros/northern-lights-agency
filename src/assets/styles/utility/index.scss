@@ -1,0 +1,86 @@
+.u-hide-mobile,
+.u-hide-tablet {
+  display: none;
+}
+
+.u-show-mobile {
+  display: block;
+}
+
+@media only screen and (min-width: 750px) {
+
+  .u-show-mobile {
+    display: none;
+  }
+
+  .u-hide-mobile {
+    display: block;
+  }
+
+  .u-show-tablet {
+    display: block;
+  }
+
+  .u-hide-tablet {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .u-show-tablet {
+    display: none;
+  }
+
+  .u-hide-tablet {
+    display: block;
+  }
+
+}
+
+// misc
+
+.u-fluid-image {
+  width: 100%;
+}
+
+.u-mb0x {
+  margin-bottom: 0;
+}
+
+.u-mb1x {
+  margin-bottom: 1.5rem;
+}
+
+.u-mb2x {
+  margin-bottom: 3.125rem;
+}
+
+.u-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// screen reader text
+
+.u-srt {
+  clip: rect(1px,1px,1px,1px);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+// clearfix
+
+.u-cf::before,
+.u-cf::after {
+  content: '';
+  display: table;
+}
+
+.u-cf::after {
+  clear: both;
+}

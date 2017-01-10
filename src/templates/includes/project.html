@@ -1,0 +1,28 @@
+{% macro project(attr) %}
+
+  <div class="project__item  project__item--{{ attr.slug }}"{% if attr.parallax %} data-type="parallax" data-depth="{{ attr.depth }}"{% endif %}>
+
+    <div class="project__content">
+
+      {% if attr.url %}
+        <a href="{{ attr.url }}">
+          <figure class="project__image  project__image--{{ attr.slug }}">
+            <img class="project__image__file" src="{{ attr.img }}" alt="{{ attr.title }}">
+          </figure>
+        </a>
+      {% else %}
+        <figure class="project__image  project__image--{{ attr.slug }}">
+          <img class="project__image__file" src="{{ attr.img }}" alt="{{ attr.title }}">
+        </figure>
+      {% endif %}
+
+      <div class="project__block">
+        <h1 class="t-subtitle">{{ attr.title }}</h1>
+        <p class="project__body  t-title">{{ attr.body }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+{% endmacro %}

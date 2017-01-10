@@ -1,0 +1,156 @@
+{% extends './layouts/master.html' %}
+
+{% block content %}
+
+  <figure class="hero  hero--main"></figure>
+
+  <section class="strip">
+
+    <div class="strip__item" data-strip="item">
+
+      <div class="l-flex  l-flex__row">
+
+        <div class="l-flex__item  l-flex__item--half">
+          <figure class="">
+            <img class="u-fluid-image" src="/assets/images/Showroom_01.jpg" alt="">
+          </figure>
+          <figure class="">
+            <img class="u-fluid-image" src="/assets/images/Showroom_02.jpg" alt="">
+          </figure>
+        </div>
+
+        <div class="l-flex__item  l-flex__item--half">
+          <div class="strip__sticky" data-strip="sticky">
+            <div class="strip__content">
+              <div class="t-lead  u-mb2x">
+                <p class="">Since 2004, Northern Lights Agency has been and continues to be one of Manchester’s leading fashion agencies.</p>
+                <p class="u-mb0x">Currently home to a stable of brands that have a wealth of heritage, Nigel and Lenny are continually reviewing the agencies brand mix and keeping an ear to the ground for the next big thing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="strip__item" data-strip="item">
+
+      <article class="l-flex  l-flex__row">
+
+        <div class="l-flex__item  l-flex__item--half">
+          <figure class="">
+            <img class="u-fluid-image" src="/assets/images/Armor-Lux_01.jpg" alt="">
+          </figure>
+          <figure class="">
+            <img class="u-fluid-image" src="/assets/images/Armor-Lux_02.jpg" alt="">
+          </figure>
+        </div>
+
+        <div class="l-flex__item  l-flex__item--half">
+          <div class="strip__sticky" data-strip="sticky">
+            <div class="strip__content">
+              <header class="strip__header  u-mb1x">
+                <h2 class="t-heading  t-heading-1  u-mb0x">Armor-Lux</h2>
+              </header>
+              <div class="">
+                <div class="t-lead  u-mb1x">
+                  <p class="u-mb0x">A true classic, Armor-Lux is the original breton company who have been making their famous striped shirts since 1938.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="strip__item" data-strip="item">
+
+      <article class="l-flex  l-flex__row">
+
+        <div class="l-flex__item  l-flex__item--half  l-flex">
+          <figure class="strip__object">
+            <img class="strip__image  u-fluid-image" src="/assets/images/Farah_01.jpg" alt="">
+          </figure>
+        </div>
+
+        <div class="l-flex__item  l-flex__item--half">
+          <div class="strip__sticky" data-strip="sticky">
+            <div class="strip__content">
+              <header class="strip__header  u-mb1x">
+                <h2 class="t-heading  t-heading-1  u-mb0x">Farah</h2>
+              </header>
+              <div class="">
+                <div class="t-lead  u-mb1x">
+                  <p class="u-mb0x">The Farah brand was founded in the US however it didn’t become the iconic brand it is today until it reached the UK in the 1970s.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="strip__item" data-strip="item">
+
+      <article class="l-flex  l-flex__row">
+
+        <div class="l-flex__item  l-flex__item--half  l-flex">
+          <figure class="strip__object">
+            <img class="strip__image  u-fluid-image" src="/assets/images/Penguin_01.jpg" alt="">
+          </figure>
+        </div>
+
+        <div class="l-flex__item  l-flex__item--half">
+          <div class="strip__sticky" data-strip="sticky">
+            <div class="strip__content">
+              <header class="strip__header  u-mb1x">
+                <h2 class="t-heading  t-heading-1  u-mb0x">Original Penguin</h2>
+              </header>
+              <div class="">
+                <div class="t-lead  u-mb1x">
+                  <p class="u-mb0x">Known for its unique, humorous and detail-oriented clothing Penguin has now developed into a full lifestyle brand offering apparel, accessories, footwear and much more.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="instagram  l-pt2x  l-pb2x">
+    <div class="l-container  l-flex  l-flex--row" id="js-instagram">
+      <!-- <div class="instagram__item">
+        <header class="instagram__header">
+          <h3 class="t-heading  t-heading-1">Instagram</h3>
+        </header>
+      </div> -->
+    </div>
+  </section>
+
+  {#
+  {% import './includes/project.html' as item %}
+
+  <div class="project__row">
+
+    {{ item.project(
+      {
+        title: 'Colorizer', slug: 'colorizer',
+        url: 'http://colorizer.bantros.net/',
+        img: '/assets/images/Colorizer_01.jpg',
+        body: 'Experiment with CSS Blend Modes to reproduce the effects of Spotify&rsquo;s brand identity.'
+      }
+    ) }}
+
+  </div>
+  #}
+
+{% endblock %}

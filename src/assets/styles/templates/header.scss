@@ -1,0 +1,18 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  // width: 50%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1.5em;
+  padding-right: 6.25em;
+  color: #fff;
+  background-color: $base-color;
+}
+
+.header__title {
+  align-items: flex-end;
+  transform: translateY(-1px);
+}

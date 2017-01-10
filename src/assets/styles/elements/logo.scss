@@ -1,0 +1,12 @@
+.logo {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 2.5em;
+  margin-right: 1.5em;
+}
+
+.logo__icon {
+  display: block;
+  width: 100%;
+  height: auto;
+}
