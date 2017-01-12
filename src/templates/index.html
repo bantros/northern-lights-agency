@@ -8,7 +8,7 @@
 
     <div class="strip__item" data-strip="item">
 
-      <div class="l-flex  l-flex__row">
+      <div class="l-flex  l-flex--row">
 
         <div class="l-flex__item  l-flex__item--half">
           <figure class="">
@@ -36,7 +36,7 @@
 
     <div class="strip__item" data-strip="item">
 
-      <article class="l-flex  l-flex__row">
+      <article class="l-flex  l-flex--row">
 
         <div class="l-flex__item  l-flex__item--half">
           <figure class="">
@@ -51,7 +51,7 @@
           <div class="strip__sticky" data-strip="sticky">
             <div class="strip__content">
               <header class="strip__header  u-mb1x">
-                <h2 class="t-heading  t-heading-1  u-mb0x">Armor-Lux</h2>
+                <h2 class="t-heading  u-mb0x">Armor-Lux</h2>
               </header>
               <div class="">
                 <div class="t-lead  u-mb1x">
@@ -68,7 +68,7 @@
 
     <div class="strip__item" data-strip="item">
 
-      <article class="l-flex  l-flex__row">
+      <article class="l-flex  l-flex--row">
 
         <div class="l-flex__item  l-flex__item--half  l-flex">
           <figure class="strip__object">
@@ -80,7 +80,7 @@
           <div class="strip__sticky" data-strip="sticky">
             <div class="strip__content">
               <header class="strip__header  u-mb1x">
-                <h2 class="t-heading  t-heading-1  u-mb0x">Farah</h2>
+                <h2 class="t-heading  u-mb0x">Farah</h2>
               </header>
               <div class="">
                 <div class="t-lead  u-mb1x">
@@ -97,7 +97,7 @@
 
     <div class="strip__item" data-strip="item">
 
-      <article class="l-flex  l-flex__row">
+      <article class="l-flex  l-flex--row">
 
         <div class="l-flex__item  l-flex__item--half  l-flex">
           <figure class="strip__object">
@@ -109,7 +109,7 @@
           <div class="strip__sticky" data-strip="sticky">
             <div class="strip__content">
               <header class="strip__header  u-mb1x">
-                <h2 class="t-heading  t-heading-1  u-mb0x">Original Penguin</h2>
+                <h2 class="t-heading  u-mb0x">Original Penguin</h2>
               </header>
               <div class="">
                 <div class="t-lead  u-mb1x">
@@ -124,16 +124,74 @@
 
     </div>
 
+    <div class="strip__item" data-strip="item">
+
+      <article class="l-flex  l-flex--row">
+
+        <div class="l-flex__item  l-flex__item--half  l-flex  l-flex--row" id="js-instagram"></div>
+
+        <div class="l-flex__item  l-flex__item--half">
+          <div class="strip__sticky" data-strip="sticky">
+            <div class="strip__content">
+              <header class="strip__header  u-mb1x">
+                <h2 class="t-heading  u-mb0x">Twitter</h2>
+              </header>
+              <div class="">
+                <div class="t-lead  u-mb1x">
+                  <p class="u-mb0x">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+
   </section>
 
-  <section class="instagram  l-pt2x  l-pb2x">
-    <div class="l-container  l-flex  l-flex--row" id="js-instagram">
-      <!-- <div class="instagram__item">
-        <header class="instagram__header">
-          <h3 class="t-heading  t-heading-1">Instagram</h3>
-        </header>
-      </div> -->
+  <section class="contact">
+
+    <div class="l-container  l-row">
+
+      <form class="form  l-pt2x  l-pb2x" id="js-contactForm" action="/" method="POST">
+
+        <input name="_subject" type="hidden" value="New submission from northernlightsagency.co.uk">
+
+        <div class="form__row  l-pb1x">
+          <header class="strip__header  u-mb1x">
+            <h2 class="t-heading  u-mb0x">Contact</h2>
+          </header>
+          <div class="t-lead">
+            <p class="u-mb0x">If you need to make an appointment with us or just wish to contact us feel free to get in touch.</p>
+          </div>
+        </div>
+
+        <div class="form__row  u-mb2x">
+          <input class="form__input  t-heading  t-fw-700" id="js-contactFormName" name="Name" type="text" placeholder="Your name" required>
+        </div>
+
+        <div class="form__row  u-mb2x">
+          <input class="form__input  t-heading  t-fw-700" id="js-contactFormEmail" name="Email" type="email" placeholder="Your email" required>
+        </div>
+
+        <div class="form__row  u-mb2x">
+          <textarea class="form__input  form__input--textarea  t-heading  t-fw-700" id="js-contactFormMessage" name="Message" placeholder="Your message" required></textarea>
+        </div>
+
+        <div class="form__row">
+          <input class="form__input  form__input--gotcha  t-heading  t-fw-700" name="_gotcha" type="text">
+        </div>
+
+        <div class="form__row  t-ta-right">
+          <input class="btn  btn--primary  btn--submit  t-heading  t-fw-700" id="js-contactSubmit" type="submit" value="Send">
+        </div>
+
+      </form>
+
     </div>
+
   </section>
 
   {#

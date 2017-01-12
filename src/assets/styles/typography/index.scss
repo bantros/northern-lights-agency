@@ -14,22 +14,22 @@
   text-align: center;
 }
 
+.t-ta-right {
+  text-align: right;
+}
+
 .t-tt-upper {
   text-transform: uppercase;
 }
 
-.t-indent {
-  padding-left: 1rem;
-}
-
-.t-heading-1 {
+.t-heading {
   font-size: 1em;
   line-height: 1.25;
 }
 
 @media only screen and (min-width: 1200px) {
 
-  .t-heading-1 {
+  .t-heading {
     font-size: 1.25em;
   }
 

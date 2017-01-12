@@ -1,0 +1,38 @@
+.form__row:nth-child(odd) {
+  padding-right: 3.125em;
+}
+
+.form__row:nth-child(even) {
+  padding-left: 3.125em;
+}
+
+.form__row:last-child {
+  padding-right: 1.5em;
+}
+
+.form__input {
+  width: 100%;
+  padding: 1em;
+  background-color: $brand-grey--light;
+  border: 4px solid $brand-grey--light;
+  border-radius: 0.25em;
+  outline: none;
+  transition: all 300ms ease-in-out;
+}
+
+.form__input:focus {
+  border-color: $brand-grey--dark;
+}
+
+.form__input--textarea {
+  height: 10em;
+  resize: none;
+}
+
+.form__input--gotcha {
+  display: none;
+}
+
+.contact > .l-container {
+  max-width: 37.5em;
+}

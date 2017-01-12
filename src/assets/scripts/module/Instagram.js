@@ -23,7 +23,7 @@ export const Instagram = {
       get: 'user',
       userId: Instagram.userId,
       target: 'js-instagram',
-      limit: 4,
+      limit: 6,
       resolution: 'standard_resolution',
       mock: true,
       // after: function() {
@@ -59,6 +59,8 @@ export const Instagram = {
 
     if (instafeed.timestamp > new Date().getTime()) {
       this.createItem(item);
+    } else {
+      this.getFeed();
     }
 
   },

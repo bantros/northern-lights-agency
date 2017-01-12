@@ -1,5 +1,6 @@
 'use strict';
 
+import { ContactForm } from './module/ContactForm';
 import { Instagram } from './module/Instagram';
 import { Sticky } from './module/Sticky';
 
@@ -7,6 +8,7 @@ import { Sticky } from './module/Sticky';
 
   document.documentElement.className = 'js';
 
+  ContactForm.init();
   Instagram.init();
   Sticky.init();
 
