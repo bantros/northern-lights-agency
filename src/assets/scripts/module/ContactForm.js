@@ -10,7 +10,7 @@ export const ContactForm = {
     this.render();
   },
 
-  pushToStorage(e) {
+  ajaxSubmission(e) {
 
     e.preventDefault();
 
@@ -26,21 +26,21 @@ export const ContactForm = {
         ContactForm.btn.setAttribute('disabled', 'disabled');
         ContactForm.btn.value = 'Loading...';
       } else if (request.readyState === 4) {
-        if (request.status == 200 && request.status < 300) {
+        if (request.status === 200 && request.status < 300) {
           ContactForm.btn.value = 'Sent';
         } else {
           ContactForm.btn.removeAttribute('disabled');
           ContactForm.btn.value = 'Send';
         }
       }
-    }
+    };
 
   },
 
   render() {
 
     if (this.elem) {
-      this.elem.addEventListener('submit', this.pushToStorage, false);
+      this.elem.addEventListener('submit', this.ajaxSubmission, false);
     }
 
   }

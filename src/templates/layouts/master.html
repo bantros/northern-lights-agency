@@ -30,6 +30,7 @@
     <div class="app" id="js-app">
 
       <header class="header" id="js-header" role="banner">
+        <div class="preloader" id="js-preloader"></div>
         <div class="l-flex  l-flex--row">
           <div class="logo  l-flex__item">
             <a href="/">
@@ -42,7 +43,7 @@
         </div>
       </header>
 
-      <main class="l-main" id="js-main" role="main">
+      <main class="main  is-preloading" id="js-main" role="main">
         {% block content %}
         {% endblock %}
       </main>

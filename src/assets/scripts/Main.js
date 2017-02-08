@@ -2,6 +2,7 @@
 
 import { ContactForm } from './module/ContactForm';
 import { Instagram } from './module/Instagram';
+import { Preloader } from './module/Preloader';
 import { Sticky } from './module/Sticky';
 
 (function() {
@@ -10,15 +11,8 @@ import { Sticky } from './module/Sticky';
 
   ContactForm.init();
   Instagram.init();
+  Preloader.init();
   Sticky.init();
-
-  // let everythingLoaded = setInterval(function() {
-  //
-  //   if (/loaded|complete/.test(document.readyState)) {
-  //     clearInterval(everythingLoaded);
-  //   }
-  //
-  // }, 10);
 
 })();
 

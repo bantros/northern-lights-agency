@@ -47,7 +47,8 @@
 	__webpack_require__(1);
 	__webpack_require__(2);
 	__webpack_require__(3);
-	module.exports = __webpack_require__(5);
+	__webpack_require__(5);
+	module.exports = __webpack_require__(6);
 
 
 /***/ },
@@ -60,7 +61,9 @@
 
 	var _Instagram = __webpack_require__(3);
 
-	var _Sticky = __webpack_require__(5);
+	var _Preloader = __webpack_require__(5);
+
+	var _Sticky = __webpack_require__(6);
 
 	(function () {
 
@@ -68,15 +71,8 @@
 
 	  _ContactForm.ContactForm.init();
 	  _Instagram.Instagram.init();
+	  _Preloader.Preloader.init();
 	  _Sticky.Sticky.init();
-
-	  // let everythingLoaded = setInterval(function() {
-	  //
-	  //   if (/loaded|complete/.test(document.readyState)) {
-	  //     clearInterval(everythingLoaded);
-	  //   }
-	  //
-	  // }, 10);
 	})();
 
 	// webfontloader
@@ -121,7 +117,7 @@
 	  init: function init() {
 	    this.render();
 	  },
-	  pushToStorage: function pushToStorage(e) {
+	  ajaxSubmission: function ajaxSubmission(e) {
 
 	    e.preventDefault();
 
@@ -137,7 +133,7 @@
 	        ContactForm.btn.setAttribute('disabled', 'disabled');
 	        ContactForm.btn.value = 'Loading...';
 	      } else if (request.readyState === 4) {
-	        if (request.status == 200 && request.status < 300) {
+	        if (request.status === 200 && request.status < 300) {
 	          ContactForm.btn.value = 'Sent';
 	        } else {
 	          ContactForm.btn.removeAttribute('disabled');
@@ -149,7 +145,7 @@
 	  render: function render() {
 
 	    if (this.elem) {
-	      this.elem.addEventListener('submit', this.pushToStorage, false);
+	      this.elem.addEventListener('submit', this.ajaxSubmission, false);
 	    }
 	  }
 	};
@@ -629,6 +625,48 @@
 
 /***/ },
 /* 5 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var Preloader = exports.Preloader = {
+
+	  elem: document.getElementById('js-preloader'),
+	  main: document.getElementById('js-main'),
+	  percentage: 0,
+	  counter: 1,
+	  imgList: ['/assets/images/Armor-Lux_01.jpg', '/assets/images/Armor-Lux_02.jpg', '/assets/images/Farah_01.jpg', '/assets/images/Farah_02.jpg', '/assets/images/Hero_01.jpg', '/assets/images/Matsumoto_01.jpg', '/assets/images/Matsumoto_02.jpg', '/assets/images/Penguin_01.jpg', '/assets/images/Showroom_01.jpg', '/assets/images/Showroom_02.jpg'],
+
+	  init: function init() {
+	    this.render();
+	  },
+	  updateStatus: function updateStatus(img) {
+	    var _this = this;
+
+	    img.addEventListener('load', function () {
+	      Preloader.percentage = Math.floor(Preloader.counter / 10 * 100);
+	      Preloader.elem.style.width = Preloader.percentage + '%';
+	      Preloader.counter++;
+	      if (_this.percentage === 100) {
+	        _this.main.classList.remove('is-preloading');
+	      }
+	    });
+	  },
+	  render: function render() {
+
+	    for (var i = 0; i < this.imgList.length; i++) {
+	      var img = document.createElement('img');
+	      img.src = this.imgList[i];
+	      this.updateStatus(img);
+	    }
+	  }
+		};
+
+/***/ },
+/* 6 */
 /***/ function(module, exports) {
 
 	'use strict';
