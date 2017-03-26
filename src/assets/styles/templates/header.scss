@@ -4,7 +4,7 @@
   left: 0;
   z-index: 5000;
   width: 100%;
-  width: 25%;
+  width: 50%;
   min-width: 30em;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -12,6 +12,23 @@
   padding-right: 1.5em;
   color: #fff;
   background-color: $brand-grey--light;
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .header {
+    width: 25%;
+  }
+
+}
+
+.header__flex {
+  display: flex;
+  width: 100%;
+}
+
+.header__flex--center {
+  align-items: center;
 }
 
 .header__title {

@@ -7,6 +7,7 @@ import autoprefixer from 'gulp-autoprefixer';
 import clean from 'gulp-clean';
 import cleanCSS from 'gulp-clean-css';
 import gcmq from 'gulp-group-css-media-queries';
+import htmlmin from 'gulp-htmlmin';
 import jshint from 'gulp-jshint';
 import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
@@ -52,15 +53,15 @@ const onError = function(err) {
 gulp.task('styles', () => {
   return gulp.src(path.src + path.css + '/*.scss')
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(sourcemaps.init())
+    .pipe(!util.env.production ? sourcemaps.init() : util.noop())
     .pipe(sass({ outputStyle: 'expanded' }))
     .pipe(autoprefixer('last 2 versions'))
-    .pipe(gcmq())
+    .pipe(util.env.production ? gcmq() : util.noop())
     .pipe(util.env.production ? cleanCSS() : util.noop())
-    .pipe(sourcemaps.write('.', { includeContent: false, sourceRoot: path.build + path.css }))
+    .pipe(!util.env.production ? sourcemaps.write('.', { includeContent: false, sourceRoot: path.build + path.css }) : util.noop())
     .pipe(gulp.dest(path.build + path.css))
     .pipe(browserSync.stream({ match: '**/*.css' }))
-    .pipe(notify({ title: 'styles', message: 'styles have been compiled into main.css' }));
+    .pipe(notify({ title: 'styles', message: 'styles have been compiled into main.css', onLast: true }));
 });
 
 // scripts
@@ -73,8 +74,12 @@ gulp.task('scripts', () => {
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(util.env.production ? uglify() : util.noop())
     .pipe(gulp.dest(path.build + path.js))
-    .pipe(browserSync.reload({ stream: true }))
-    .pipe(notify({ title: 'scripts', message: 'scripts have been compiled into bundle.js' }));
+    .pipe(notify({ title: 'scripts', message: 'scripts have been compiled into bundle.js', onLast: true }));
+});
+
+gulp.task('scripts-watch', ['scripts'], (done) => {
+  browserSync.reload();
+  done();
 });
 
 // twig
@@ -90,27 +95,36 @@ gulp.task('twig', () => {
     }) : util.noop())
     .pipe(util.env.production ? htmlmin({ collapseWhitespace: true }) : util.noop())
     .pipe(gulp.dest(path.build))
-    .pipe(browserSync.reload({ stream: true }))
-    .pipe(notify({ title: 'twig', message: 'twig templates have been compiled' }));
+    .pipe(notify({ title: 'twig', message: 'twig templates have been compiled', onLast: true }));
+});
+
+gulp.task('twig-watch', ['twig'], (done) => {
+  browserSync.reload();
+  done();
 });
 
 // clean
 
 gulp.task('clean', () => {
-  return gulp.src([path.build + path.css + '/*.css', path.build + path.js + '/*.js'], { read: false })
+  return gulp.src([
+    path.build + path.css + '/*.css',
+    path.build + path.js + '/*.js'
+  ], { read: false })
     .pipe(clean());
 });
 
+// build
+
 gulp.task('build', () => {
-  runSequence('clean', ['styles', 'scripts']);
+  runSequence('styles', ['scripts-watch', 'twig-watch']);
 });
 
 // watch
 
 gulp.task('watch', ['browserSync'], () => {
   gulp.watch(path.src + path.css + '/**/*.scss', ['styles']);
-  gulp.watch(path.src + path.js + '/**/*.js', ['scripts']);
-  gulp.watch(path.src + '/templates/**/*.html', ['twig']);
+  gulp.watch(path.src + path.js + '/**/*.js', ['scripts-watch']);
+  gulp.watch(path.src + '/templates/**/*.html', ['twig-watch']);
 });
 
 // default

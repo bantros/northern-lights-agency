@@ -1,0 +1,23 @@
+@font-face {
+	font-family: 'Facto';
+	src: url('/assets/fonts/Facto-Regular.eot');
+	src: local('Facto Regular'), local('Facto-Regular'),
+		url('/assets/fonts/Facto-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Facto-Regular.woff2') format('woff2'),
+		url('/assets/fonts/Facto-Regular.woff') format('woff'),
+		url('/assets/fonts/Facto-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Facto';
+	src: url('Facto-Bold.eot');
+	src: local('Facto Bold'), local('Facto-Bold'),
+		url('/assets/fonts/Facto-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Facto-Bold.woff2') format('woff2'),
+		url('/assets/fonts/Facto-Bold.woff') format('woff'),
+		url('/assets/fonts/Facto-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}

@@ -1,4 +1,4 @@
-{% extends './layouts/master.html' %}
+{% extends './_layouts/master.html' %}
 
 {% block content %}
 
@@ -160,9 +160,45 @@
 
       <article class="l-flex  l-flex--row">
 
-        <div class="l-flex__item  l-flex__item--half  l-flex  l-flex--row" id="js-instagram"></div>
+        <div class="instagram  l-flex__item  l-flex__item--half" id="js-instagram"></div>
 
         <div class="l-flex__item  l-flex__item--half">
+          <div class="contact  strip__sticky" data-strip="sticky">
+            <form class="form  strip__content" id="js-contactForm" action="https://formspree.io/info@northernlightsagency.co.uk" method="POST">
+              <input name="_subject" type="hidden" value="New submission from northernlightsagency.co.uk">
+
+              <div class="form__row  l-pb1x">
+                <header class="strip__header  u-mb1x">
+                  <h2 class="t-heading  u-mb0x">Contact</h2>
+                </header>
+                <div class="t-lead">
+                  <p class="u-mb0x">If you need to make an appointment or just wish to contact us feel free to get in touch. Alternatively email <a href="mailto:nigel@northernlightsagency.co.uk">nigel@northernlightsagency.co.uk</a> or <a href="mailto:len@northernlightsagency.co.uk">len@northernlightsagency.co.uk</a></p>
+                </div>
+              </div>
+
+              <div class="form__row  form__row--offset  u-mb2x">
+                <input class="form__input  t-heading  t-fw-700" id="js-contactFormName" name="Name" type="text" placeholder="Your name" required>
+              </div>
+
+              <div class="form__row  form__row--offset  u-mb2x">
+                <input class="form__input  t-heading  t-fw-700" id="js-contactFormEmail" name="Email" type="email" placeholder="Your email" required>
+              </div>
+
+              <div class="form__row  form__row--offset  u-mb2x">
+                <textarea class="form__input  form__input--textarea  t-heading  t-fw-700" id="js-contactFormMessage" name="Message" placeholder="Your message" required></textarea>
+              </div>
+
+              <div class="form__row  form__row--offset">
+                <input class="form__input  form__input--gotcha  t-heading  t-fw-700" name="_gotcha" type="text">
+              </div>
+
+              <div class="form__row  form__row--offset  l-pb1x  t-ta-right">
+                <input class="btn  btn--primary  btn--submit  t-heading  t-fw-700" id="js-contactSubmit" type="submit" value="Send">
+              </div>
+            </form>
+          </div>
+
+          {#
           <div class="strip__sticky" data-strip="sticky">
             <div class="strip__content">
               <header class="strip__header  u-mb1x">
@@ -175,6 +211,7 @@
               </div>
             </div>
           </div>
+          #}
         </div>
 
       </article>
@@ -182,65 +219,5 @@
     </div>
 
   </section>
-
-  <section class="contact">
-
-    <div class="l-container  l-row">
-
-      <form class="form  l-pt2x  l-pb2x" id="js-contactForm" action="/" method="POST">
-
-        <input name="_subject" type="hidden" value="New submission from northernlightsagency.co.uk">
-
-        <div class="form__row  l-pb1x">
-          <header class="strip__header  u-mb1x">
-            <h2 class="t-heading  u-mb0x">Contact</h2>
-          </header>
-          <div class="t-lead">
-            <p class="u-mb0x">If you need to make an appointment with us or just wish to contact us feel free to get in touch.</p>
-          </div>
-        </div>
-
-        <div class="form__row  u-mb2x">
-          <input class="form__input  t-heading  t-fw-700" id="js-contactFormName" name="Name" type="text" placeholder="Your name" required>
-        </div>
-
-        <div class="form__row  u-mb2x">
-          <input class="form__input  t-heading  t-fw-700" id="js-contactFormEmail" name="Email" type="email" placeholder="Your email" required>
-        </div>
-
-        <div class="form__row  u-mb2x">
-          <textarea class="form__input  form__input--textarea  t-heading  t-fw-700" id="js-contactFormMessage" name="Message" placeholder="Your message" required></textarea>
-        </div>
-
-        <div class="form__row">
-          <input class="form__input  form__input--gotcha  t-heading  t-fw-700" name="_gotcha" type="text">
-        </div>
-
-        <div class="form__row  t-ta-right">
-          <input class="btn  btn--primary  btn--submit  t-heading  t-fw-700" id="js-contactSubmit" type="submit" value="Send">
-        </div>
-
-      </form>
-
-    </div>
-
-  </section>
-
-  {#
-  {% import './includes/project.html' as item %}
-
-  <div class="project__row">
-
-    {{ item.project(
-      {
-        title: 'Colorizer', slug: 'colorizer',
-        url: 'http://colorizer.bantros.net/',
-        img: '/assets/images/Colorizer_01.jpg',
-        body: 'Experiment with CSS Blend Modes to reproduce the effects of Spotify&rsquo;s brand identity.'
-      }
-    ) }}
-
-  </div>
-  #}
 
 {% endblock %}

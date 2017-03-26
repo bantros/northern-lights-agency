@@ -1,12 +1,21 @@
-.form__row:nth-child(odd) {
-  padding-right: 3.125em;
+.form__row {
+  max-width: 37.5em;
 }
 
-.form__row:nth-child(even) {
+.form__row:not(:nth-child(2)) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form__row--offset:nth-child(odd) {
   padding-left: 3.125em;
 }
 
-.form__row:last-child {
+.form__row--offset:nth-child(even) {
+  padding-right: 3.125em;
+}
+
+.form__row--offset:last-child {
   padding-right: 1.5em;
 }
 
@@ -31,8 +40,4 @@
 
 .form__input--gotcha {
   display: none;
-}
-
-.contact > .l-container {
-  max-width: 37.5em;
 }

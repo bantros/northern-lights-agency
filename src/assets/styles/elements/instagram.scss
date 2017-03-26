@@ -1,11 +1,10 @@
 .instagram {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   background-color: $base-color;
 }
 
 .instagram__item {
-  flex-basis: 50%;
-}
-
-.instagram__header {
-  padding: 3.125em;
+  flex: 1 0 50%;
 }

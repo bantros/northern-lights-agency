@@ -18,13 +18,13 @@ import { Sticky } from './module/Sticky';
 
 // webfontloader
 
-// var WebFont = require('webfontloader');
+import WebFont from 'webfontloader';
 
-// WebFont.load({
-//   google: {
-//     families: ['Karla:400,700:latin', 'Merriweather:400,700:latin']
-//   }
-// });
+WebFont.load({
+  custom: {
+    families: ['Facto']
+  }
+});
 
 // google analytics
 

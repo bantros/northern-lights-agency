@@ -1,5 +1,5 @@
 build/assets/images/*
-!build/assets/styles/font/*
+build/assets/fonts/*
 
 # npm / gulp
 
