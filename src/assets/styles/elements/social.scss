@@ -1,0 +1,13 @@
+.social {
+  display: flex;
+  flex-direction: row;
+}
+
+.social__item {
+  width: 1.875rem;
+  margin-right: 1rem
+}
+
+.social__link {
+  border-bottom: 0;
+}
